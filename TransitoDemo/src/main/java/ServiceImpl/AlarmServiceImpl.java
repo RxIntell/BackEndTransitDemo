@@ -17,7 +17,7 @@ public class AlarmServiceImpl implements AlarmService {
     private AlarmRepository alarmRepository;
 
     @Override
-    public Alarm createAlarm(int idTunnel, String alarmType, int severity) {
+    public Alarm createAlarm(int idTunnel, int alarmType, int severity) {
         Alarm alarm = new Alarm();
         alarm.setIdTunnel(idTunnel);
         alarm.setAlarmType(alarmType);

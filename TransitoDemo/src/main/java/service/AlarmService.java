@@ -7,7 +7,7 @@ import Entity.Alarm;
 
 public interface AlarmService {
     
-    Alarm createAlarm(int idTunnel, String alarmType, int severity);
+    Alarm createAlarm(int idTunnel, int alarmType, int severity);
     
     List<Alarm> getAlarmsBetweenDates(Date startDate, Date endDate);
     

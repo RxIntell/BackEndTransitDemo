@@ -6,7 +6,7 @@ public class AlarmReportDTO {
 
     private int severity;
     private Date alarmTimestamp;
-    private String alarmType;
+    private int alarmType;
     private int tunnelId;
     
     
@@ -16,11 +16,11 @@ public class AlarmReportDTO {
 		super();
 	}
 
-	public AlarmReportDTO(int severity, Date alarmTimestamp, String alarmType, int tunnelId) {
+	public AlarmReportDTO(int severity, Date alarmTimestamp, int i, int tunnelId) {
 		super();
 		this.severity = severity;
 		this.alarmTimestamp = alarmTimestamp;
-		this.alarmType = alarmType;
+		this.alarmType = i;
 		this.tunnelId = tunnelId;
 	}
 
@@ -47,12 +47,12 @@ public class AlarmReportDTO {
 	}
 
 
-	public String getAlarmType() {
+	public int getAlarmType() {
 		return alarmType;
 	}
 
 
-	public void setAlarmType(String alarmType) {
+	public void setAlarmType(int alarmType) {
 		this.alarmType = alarmType;
 	}
 

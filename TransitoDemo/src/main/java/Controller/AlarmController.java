@@ -20,7 +20,7 @@ public class AlarmController {
     private AlarmService alarmService;
 
     @PostMapping("/")
-    public ResponseEntity<?> createAlarm(@RequestParam int idTunnel, @RequestParam String alarmType, @RequestParam int severity) {
+    public ResponseEntity<?> createAlarm(@RequestParam int idTunnel, @RequestParam int alarmType, @RequestParam int severity) {
         try {
             Alarm createdAlarm = alarmService.createAlarm(idTunnel, alarmType, severity);
             return new ResponseEntity<>(createdAlarm, HttpStatus.CREATED);

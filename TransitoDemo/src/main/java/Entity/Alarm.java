@@ -2,10 +2,13 @@ package Entity;
 
 import java.util.Date;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 
 @Entity
 public class Alarm {
@@ -14,9 +17,17 @@ public class Alarm {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(name = "idTunel")
     private int idTunnel;
-    private String alarmType;
+    
+    @ManyToOne
+    @JoinColumn(name = "alarm_type_id")
+    private int alarmType;
+    
+    @Column(name = "alarm_timestamp")
     private Date alarmTimestamp;
+    
+    @Column(name = "severity")
     private int severity;
     
     // Constructor
@@ -41,11 +52,11 @@ public class Alarm {
         this.idTunnel = idTunnel;
     }
 
-    public String getAlarmType() {
+    public int getAlarmType() {
         return alarmType;
     }
 
-    public void setAlarmType(String alarmType) {
+    public void setAlarmType(int alarmType) {
         this.alarmType = alarmType;
     }
 

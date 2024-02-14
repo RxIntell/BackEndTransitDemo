@@ -12,9 +12,9 @@ public interface AlarmRepository extends JpaRepository<Alarm, Long> {
     List<Alarm> findBySeverity(int severity);
     List<Alarm> findBySeverityAndAlarmTimestampBetween(int severity, Date startDate, Date endDate);
     List<Alarm> findBySeverityAndIdTunnelAndAlarmTimestampBetween(int severity, int idTunnel, Date startDate, Date endDate);
-    List<Alarm> findBySeverityAndAlarmTypeAndAlarmTimestampBetween(int severity, String alarmType, Date startDate, Date endDate);
-    List<Alarm> findByAlarmTypeAndAlarmTimestampBetween(String alarmType, Date startDate, Date endDate);
+    List<Alarm> findBySeverityAndAlarmTypeAndAlarmTimestampBetween(int severity, String code, Date startDate, Date endDate);
+    List<Alarm> findByAlarmTypeAndAlarmTimestampBetween(String code, Date startDate, Date endDate);
     List<Alarm> findByIdTunnelAndAlarmTimestampBetween(int idTunnel, Date startDate, Date endDate);
-    List<Alarm> findBySeverityAndIdTunnelAndAlarmTypeAndAlarmTimestampBetween(int severity, int idTunnel, String alarmType, Date startDate, Date endDate);
+    List<Alarm> findBySeverityAndIdTunnelAndAlarmTypeAndAlarmTimestampBetween(int severity, int idTunnel, String code, Date startDate, Date endDate);
 }
 
